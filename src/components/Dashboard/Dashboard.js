@@ -22,18 +22,22 @@ deleteHouse = (id) => {
   axios.delete(`/api/inventory/${id}`)
       .then(res => this.getHouses());
 }
-  render() {
-    return (
-      <div>
-        <h1>Dashboard</h1>
-        {this.state.inventory.map(el => {
-            return <House house={el} deleteHouse={this.deleteHouse} key={el.id} />
-          })}
-        <button onClick={() => this.props.history.push('/wizard')}>Add New Property</button>
-        
+render() {
+  return (
+    <div className='Dash'>
+      <div className='dash_subheader'>
+        <h2 className='dash_heading'>Dashboard</h2>
+        <button className='dash_subheader_button' onClick={_ => this.props.history.push('/wizard')}>Add New Property</button>
       </div>
-    );
-  }
+      <div className='dash_prop_container'>
+        <h3 className='dash_prop_heading'>Home Listings</h3>
+        {this.state.inventory.map(el => {
+          return <House house={el} deleteHouse={this.deleteHouse} key={el.id} />
+        })}
+      </div>
+    </div>
+  );
+}
 }
 
 //Make an onClick event to setup the Add button and redirect it to the Wizard path "/wizard" when clicked.

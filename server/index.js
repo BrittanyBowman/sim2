@@ -18,6 +18,9 @@ massive(CONNECTION_STRING, { scripts: __dirname + "/db" })
   })
   .catch(err => console.log(err));
 
+  //endpoints
 app.get('/api/inventory', controller.getAll);
+app.post('/api/inventory', controller.create);
+app.delete('/api/inventory/:id', controller.delete);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
