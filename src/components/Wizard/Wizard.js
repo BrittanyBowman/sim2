@@ -16,20 +16,6 @@ export class Wizard extends Component {
 
 //handleChange for input fields on the wizard page
 handleChange = (prop, value) => {
-    switch (prop) {
-      case 'state':
-        if (value.length > 2) {
-          return
-        }
-        break;
-      case 'zip':
-        if (value.length > 5) {
-          return
-        }
-        break;
-      default:
-        break;
-    }
     this.setState({ [prop]: value })
   
 }
