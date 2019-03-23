@@ -12,11 +12,11 @@ module.exports = {
       });
   },
   create: (req, res) => {
-    let { name, address, city, state, zip } = req.body;
+    let { name, address, city, state, zip, img, mortgage, rent } = req.body;
 
     req.app
       .get("db")
-      .create_product([name, address, city, state, zip])
+      .create_product([name, address, city, state, zip, img, mortgage, rent])
       .then(() => {
         res.status(200).send();
       })
