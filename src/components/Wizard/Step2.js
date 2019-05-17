@@ -31,11 +31,11 @@ class Step2 extends Component {
             <input style={{ width: "35vw" }} value={this.state.img} onChange={e => this.handleChange(e.target.value)} />
           </div>
         </div>
-        <button className='wiz_button wiz_prev_button' onClick={_ => {
+        <button className='wiz_button wiz_prev_button' onClick={() => {
           this.props.updateImg(this.state.img);
           this.props.history.push('/wizard/step1');
         }}>Previous Step</button>
-        <button className='wiz_button wiz_step_button' onClick={_ => {
+        <button className='wiz_button wiz_step_button' onClick={() => {
           this.props.updateImg(this.state.img);
           this.props.history.push('/wizard/step3');
         }}>Next Step</button>
