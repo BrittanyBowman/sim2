@@ -18,9 +18,9 @@ function Wizard(props) {
             props.history.push('/')
           }}>Cancel</button>
         </div>
-        <Route path='/wizard/step1' component={Step1} />
-        <Route path='/wizard/step2' component={Step2} />
-        <Route path='/wizard/step3' component={Step3} />
+        <Route path={props.match.path+'/step1'} component={Step1} />
+        <Route path={props.match.path+'/step2'} component={Step2} />
+        <Route path={props.match.path+'/step3'} component={Step3} />
       </div>
     )
   }
